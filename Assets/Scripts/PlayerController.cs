@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 5.0f;
     public const string HORIZONTAL = "Horizontal", VERTICAL = "Vertical";
 
+    public static bool playerCreated;
+
     private float inputTol = 0.2f;
     private float xInput, yInput;
 
@@ -20,6 +22,11 @@ public class PlayerController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        playerCreated = true;
     }
 
     void Update()
