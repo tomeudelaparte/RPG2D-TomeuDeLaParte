@@ -140,6 +140,7 @@ MonoBehaviour:
   speed: 5
   lastDirection: {x: 0, y: 0}
   nextUuid: 
+  attackTime: 1
 --- !u!95 &5582538093677769781
 Animator:
   serializedVersion: 4
@@ -401,15 +402,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701806958561661953, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701806958561661953, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701806958561661953, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701806958561661953, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

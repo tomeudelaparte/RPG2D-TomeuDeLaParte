@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5454192454798012053}
   - component: {fileID: 1084465663}
   - component: {fileID: -1057372385347900699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -165,8 +165,11 @@ MonoBehaviour:
   timeToMakeStep: 2
   hasRandomMove: 0
   enemyDirections:
+  - {x: 0, y: 0}
   - {x: 1, y: 0}
+  - {x: 0, y: -1}
   - {x: -1, y: 0}
+  - {x: 0, y: 1}
 --- !u!114 &1084465663
 MonoBehaviour:
   m_ObjectHideFlags: 0

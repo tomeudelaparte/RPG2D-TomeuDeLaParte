@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     private float xInput, yInput;
 
     private bool isWalking;
+    private bool isAttacking;
+
+    [SerializeField] private float attackTime;
+    private float attackTimeCounter;
 
     private Animator _animator;
     private Rigidbody2D _rigidbody;
@@ -38,7 +42,42 @@ public class PlayerController : MonoBehaviour
         yInput = Input.GetAxisRaw(VERTICAL);
         isWalking = false;
 
+        if (isAttacking)
+        {
+            attackTimeCounter -= Time.deltaTime;
+            if (attackTimeCounter < 0)
+            {
+                isAttacking = false;
+            }
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            isAttacking = true;
+            attackTimeCounter = attackTime;
+        }
+        else
+        {
+            Movement();
+        }
+    }
 
+    private void LateUpdate()
+    {
+        if (!isWalking || isAttacking)
+        {
+            _rigidbody.velocity = Vector2.zero;
+        }
+
+        _animator.SetFloat(HORIZONTAL, xInput);
+        _animator.SetFloat(VERTICAL, yInput);
+        _animator.SetFloat("LastHorizontal", lastDirection.x);
+        _animator.SetFloat("LastVertical", lastDirection.y);
+        _animator.SetBool("IsWalking", isWalking);
+        _animator.SetBool("IsAttacking", isAttacking);
+    }
+
+    private void Movement()
+    {
         // HORIZONTAL MOVEMENT
         if (Mathf.Abs(xInput) > inputTol)
         {
@@ -63,19 +102,5 @@ public class PlayerController : MonoBehaviour
             isWalking = true;
             lastDirection = new Vector2(0, yInput);
         }
-    }
-
-    private void LateUpdate()
-    {
-        if (!isWalking)
-        {
-            _rigidbody.velocity = Vector2.zero;
-        }
-
-        _animator.SetFloat(HORIZONTAL, xInput);
-        _animator.SetFloat(VERTICAL, yInput);
-        _animator.SetFloat("LastHorizontal", lastDirection.x);
-        _animator.SetFloat("LastVertical", lastDirection.y);
-        _animator.SetBool("IsWalking", isWalking);
     }
 }
