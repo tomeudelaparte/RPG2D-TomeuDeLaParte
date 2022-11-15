@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  blinkingDuration: 2
 --- !u!1001 &1888397851687123898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,6 +297,10 @@ PrefabInstance:
       propertyPath: damage
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7351752242722167919, guid: 31de2bb833424de4c9113d45e053251c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31de2bb833424de4c9113d45e053251c, type: 3}
 --- !u!4 &8949290596704004054 stripped
@@ -357,6 +362,10 @@ PrefabInstance:
     - target: {fileID: 4172289266587045610, guid: 05cb0951f77c8414aa8eeff16f91c0e5, type: 3}
       propertyPath: damage
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172289266587045611, guid: 05cb0951f77c8414aa8eeff16f91c0e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4172289266587045614, guid: 05cb0951f77c8414aa8eeff16f91c0e5, type: 3}
       propertyPath: m_Name
@@ -422,6 +431,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701806958561661953, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701806958561661954, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701806958561661955, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}

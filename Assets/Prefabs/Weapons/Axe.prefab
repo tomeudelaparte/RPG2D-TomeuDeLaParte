@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.375
       objectReference: {fileID: 0}
+    - target: {fileID: 6701806958561661955, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}
+      propertyPath: damage
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6701806958561661959, guid: 9c5f576f54881d04c8849230ff49d293, type: 3}
       propertyPath: m_Name
       value: Axe

@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public string nextUuid;
 
+    public bool canMove = true;
+
     private float inputTol = 0.2f;
     private float xInput, yInput;
 
@@ -34,13 +36,20 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerCreated = true;
+        lastDirection = Vector2.down;
     }
 
     void Update()
     {
         xInput = Input.GetAxisRaw(HORIZONTAL);
         yInput = Input.GetAxisRaw(VERTICAL);
+
         isWalking = false;
+
+        if (!canMove)
+        {
+            return;
+        }
 
         if (isAttacking)
         {
