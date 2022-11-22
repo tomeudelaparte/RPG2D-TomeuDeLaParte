@@ -5,10 +5,13 @@ using UnityEngine;
 public class WeaponDamage : MonoBehaviour
 {
     public int damage;
+    [Tooltip("Indice que ocupa el arma como hijo de Weapons")]
+    public int index;
 
     public GameObject bloodParticle;
-    private GameObject hitPoint;
     public GameObject canvasDamageNumber;
+
+    private GameObject hitPoint;
 
     private void Start()
     {

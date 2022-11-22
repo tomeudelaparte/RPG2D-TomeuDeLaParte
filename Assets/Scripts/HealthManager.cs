@@ -5,11 +5,14 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public int maxHealth = 100;
+    public int expWhenDefeated = 0;
+
     private int currentHealth;
 
     private bool isBlinking;
     [SerializeField] private float blinkingDuration;
     private float blinkingCounter;
+
     private SpriteRenderer _characterRenderer;
 
     private void Start()
@@ -61,6 +64,11 @@ public class HealthManager : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            if (gameObject.tag.Equals("Enemy"))
+            {
+                GameObject.Find("Player").GetComponent<CharacterStats>().AddExperience(expWhenDefeated);
+            }
+
             gameObject.SetActive(false);
         }
 

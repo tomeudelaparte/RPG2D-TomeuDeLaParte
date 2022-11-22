@@ -197,3 +197,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  expWhenDefeated: 10
+  blinkingDuration: 0
